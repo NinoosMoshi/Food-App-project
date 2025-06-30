@@ -1,0 +1,115 @@
+✅ @JsonInclude(JsonInclude.Include.NON_NULL)
+This tells Jackson to exclude null fields when serializing an object to JSON.
+
+🔍 Meaning:
+If a field is null, it will not appear in the resulting JSON.
+Used to make the JSON response cleaner and smaller.
+
+###########################################################################################################
+
+✅ @JsonIgnoreProperties(ignoreUnknown = true)
+This tells Jackson to ignore extra (unknown) fields in the JSON when deserializing into a Java object.
+
+🔍 Meaning:
+If the JSON contains fields not present in the Java class, they are ignored.
+Prevents errors during deserialization when the API receives unexpected or extra fields.
+
+###########################################################################################################
+
+✅ @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+private String password;
+
+Explanation:
+This is a Jackson annotation used during JSON serialization and deserialization (commonly with Spring Boot APIs). It means:
+WRITE_ONLY: The password field can only be written into the object (e.g., when receiving a request body), but will not be included when serializing the object (e.g., when sending a response).
+
+Use Case Example:
+Let’s say you have a UserDTO class:
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class UserDTO {
+
+    private String username;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String password;
+
+    // Constructors
+    public UserDTO() {}
+
+    public UserDTO(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    // Getters and Setters
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
+Example Behavior:
+Input JSON (HTTP Request):
+{
+  "username": "ninoos",
+  "password": "secret123"
+}
+This will correctly deserialize into UserDTO — the password will be set.
+
+Output JSON (HTTP Response):
+{
+  "username": "ninoos"
+}
+The password is not included in the response, because it is WRITE_ONLY.
+
+###########################################################################################################
+
+✅ @NotEmpty VS ✅ @NotBlank
+
+✅ @NotEmpty
+Applies to: Strings, collections, maps, arrays
+Checks that:
+The value is not null
+The value is not empty (e.g., "" or [])
+Allows whitespace: " " is considered valid for Strings.
+
+Example:
+@NotEmpty(message = "Password is required")
+private String password;
+✅ "abc" → valid
+✅ " " → valid
+❌ "" → invalid
+❌ null → invalid
+
+
+✅ @NotBlank
+Applies to: Strings only
+Checks that:
+The value is not null
+The value is not empty
+The value is not only whitespace
+
+Example:
+@NotBlank(message = "Password is required")
+private String password;
+✅ "abc" → valid
+❌ " " → invalid
+❌ "" → invalid
+❌ null → invalid
+
+✅ Which One to Use for Password?
+Use @NotBlank — it's stricter and better for text fields like passwords, names, etc., where whitespace-only is not acceptable.
+
+###########################################################################################################
