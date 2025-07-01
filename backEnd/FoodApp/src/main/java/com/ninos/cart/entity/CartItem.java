@@ -1,5 +1,6 @@
 package com.ninos.cart.entity;
 
+import com.ninos.menu.entity.Menu;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

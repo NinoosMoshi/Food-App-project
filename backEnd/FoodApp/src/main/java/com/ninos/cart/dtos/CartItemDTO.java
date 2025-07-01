@@ -3,8 +3,7 @@ package com.ninos.cart.dtos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.ninos.cart.entity.Cart;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import com.ninos.menu.dtos.MenuDTO;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -15,9 +14,6 @@ import java.math.BigDecimal;
 public class CartItemDTO {
 
     private Long id;
-
-    private Cart cart;
-
 
     private MenuDTO menu;
 

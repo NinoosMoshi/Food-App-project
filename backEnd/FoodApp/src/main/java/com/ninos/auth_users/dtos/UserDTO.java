@@ -3,12 +3,10 @@ package com.ninos.auth_users.dtos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
+import com.ninos.role.dtos.RoleDTO;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -26,7 +24,7 @@ public class UserDTO {
 
     private boolean isActive;
     private String address;
-    private List<Role> roles;
+    private List<RoleDTO> roles;
     private MultipartFile imageFile;
 
 

@@ -1,6 +1,10 @@
 package com.ninos.auth_users.entity;
 
 import com.ninos.cart.entity.Cart;
+import com.ninos.order.entity.Order;
+import com.ninos.payment.entity.Payment;
+import com.ninos.review.entity.Review;
+import com.ninos.role.entity.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

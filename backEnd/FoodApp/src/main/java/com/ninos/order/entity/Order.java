@@ -3,6 +3,7 @@ package com.ninos.order.entity;
 import com.ninos.auth_users.entity.User;
 import com.ninos.enums.OrderStatus;
 import com.ninos.enums.PaymentStatus;
+import com.ninos.payment.entity.Payment;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

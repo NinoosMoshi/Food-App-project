@@ -2,7 +2,7 @@ package com.ninos.menu.dtos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.ninos.category.entity.Category;
+import com.ninos.review.dtos.ReviewDTO;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -36,5 +36,6 @@ public class MenuDTO {
     private MultipartFile imageFile; // for uploading the image
 
     private List<ReviewDTO> reviews;
+
 
 }

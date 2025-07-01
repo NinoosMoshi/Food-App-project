@@ -2,6 +2,7 @@ package com.ninos.menu.entity;
 
 import com.ninos.category.entity.Category;
 import com.ninos.order.entity.OrderItem;
+import com.ninos.review.entity.Review;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
