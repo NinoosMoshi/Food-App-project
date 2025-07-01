@@ -1,5 +1,6 @@
 package com.ninos.auth_users.entity;
 
+import com.ninos.cart.entity.Cart;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
