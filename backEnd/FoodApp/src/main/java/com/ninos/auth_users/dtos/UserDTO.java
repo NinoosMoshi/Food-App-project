@@ -16,7 +16,9 @@ public class UserDTO {
 
     private Long id;
     private String name;
+    private String email;
     private String phoneNumber;
+
     private String profileUrl;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // password can be written in the request body, but will not be included in the response
