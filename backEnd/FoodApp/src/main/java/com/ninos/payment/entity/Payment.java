@@ -39,7 +39,7 @@ public class Payment {
     @Enumerated(EnumType.STRING)
     private PaymentGateway paymentGateway;
 
-    private String failureReasons;
+    private String failureReason;
 
     private LocalDateTime paymentDate;
 

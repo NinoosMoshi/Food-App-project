@@ -22,10 +22,12 @@ public class PaymentDTO {
     private PaymentStatus paymentStatus;
     private String transactionId;
     private PaymentGateway paymentGateway;
-    private String failureReasons;
+    private String failureReason;
+    private boolean success;
     private LocalDateTime paymentDate;
 
     private OrderDTO order;
     private UserDTO user;
+
 
 }
